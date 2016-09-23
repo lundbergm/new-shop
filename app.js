@@ -1,11 +1,20 @@
+
 var connect = require('connect');
 var http = require('http');
+var express = require('express');
 
-var app = connect();
+var app = express();
 
-app.use(function(req, res){
+/*server.use(function(req, res){
   res.end('Hello from Node.js/io.js + Connect.js!\n');
-})
+})*/
+
+app.get('/', function(req, res){
+  res.send('Hello from Node.js/io.js + Connect.js!\n');
+});
+app.get('/test', function(req, res){
+  res.send('Hasdfasdfasdfasdfadsfadfsello from Node.js/io.js + Connect.js!\n');
+});
 
 http.createServer(app).listen(3000);
 if (typeof(PhusionPassenger) !== 'undefined') {
